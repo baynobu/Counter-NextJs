@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mengatur variabel warna yang akan digunakan dalam gradient background */
+/*
+--foreground-rgb -> Warna teks
+--background-start-rgb -> Warna latar belakang awal gradient
+--background-end-rgb -> Warna latar belakang akhir gradient
+*/
+
+
+:root {
+  --foreground-rgb: 255, 255, 255; 
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* Media query untuk tampilan dengan preferensi tema cahaya */
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
